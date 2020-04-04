@@ -19,7 +19,7 @@ function showDay() {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let day = days[now.getDay()];
   return day;
@@ -43,7 +43,17 @@ function displayWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-let city = "Los angeles";
-let apiKey = "c30b70227281106a3ea7b3125756ea7f";
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(url).then(displayWeather);
+function search(city) {
+  let apiKey = "c30b70227281106a3ea7b3125756ea7f";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(displayWeather);
+}
+
+function showCity(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#search-input");
+  search(cityElement.value);
+}
+
+let form = document.querySelector("form");
+form.addEventListener("submit", showCity);
