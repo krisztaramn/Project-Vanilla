@@ -32,7 +32,8 @@ function displayWeather(response) {
   let currentDay = document.querySelector(".current-day");
   let iconElement = document.querySelector("#icon-today");
 
-  currentTemperature.innerHTML = Math.round(response.data.main.temp);
+  celsiusValue = response.data.main.temp;
+  currentTemperature.innerHTML = Math.round(celsiusValue);
   h1.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   timeElement.innerHTML = formatDate(time);
@@ -42,6 +43,8 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  document.getElementById("celsius").style.fontSize = "1.5em";
+  document.getElementById("fahrenheit").style.fontSize = "1em";
 }
 function search(city) {
   let apiKey = "c30b70227281106a3ea7b3125756ea7f";
@@ -55,5 +58,29 @@ function showCity(event) {
   search(cityElement.value);
 }
 
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheit = document.querySelector(".current-temperature");
+  fahrenheit.innerHTML = Math.round((celsiusValue * 9) / 5 + 32);
+  document.getElementById("celsius").style.fontSize = "1em";
+  document.getElementById("fahrenheit").style.fontSize = "1.5em";
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let celsius = document.querySelector(".current-temperature");
+  celsius.innerHTML = Math.round(celsiusValue);
+  document.getElementById("celsius").style.fontSize = "1.5em";
+  document.getElementById("fahrenheit").style.fontSize = "1em";
+}
+
+let celsiusValue = null;
+
 let form = document.querySelector("form");
 form.addEventListener("submit", showCity);
+
+let fahrenheit = document.querySelector(".fahrenheit");
+fahrenheit.addEventListener("click", showFahrenheit);
+
+let celsius = document.querySelector(".celsius");
+celsius.addEventListener("click", showCelsius);
