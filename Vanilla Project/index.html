@@ -10,10 +10,147 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/10dfcc0e7a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <section>
+        <div class="row">
+          <div class="col">
+            <form>
+              <input
+                class="search-bar"
+                type="text"
+                placeholder="Enter location"
+                id="search-input"
+              />
+            </form>
+            <h1><strong>Weather app</strong></h1>
+          </div>
+          <div class="col">
+            <form>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="current-location"
+              >
+                Current location
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img
+              src="src/img/rain.png"
+              alt="cloud-icon"
+              id="icon-today"
+              class="today-symbol"
+            />
+          </div>
+          <div class="col temperature-today">
+            <span class="current-temperature">10</span>
+            <span class="temperature-icon">
+              <button class="celsius" id="celsius">°C</button>
+              <i class="fas fa-grip-lines-vertical"></i>
+              <button class="fahrenheit" id="fahrenheit">°F</button>
+            </span>
+          </div>
+          <div class="col">
+            <button class="forcast-day current-day">Wednesday</button>
+            <span class="description"
+              ><span id="description">Rain</span> <em>at</em>
+              <span id="time">8:25pm</span></span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <ul>
+              <li>
+                <img
+                  src="src/img/cloudy.png"
+                  alt="sunny-cloud-icon"
+                  class="forcast-symbol"
+                />
+              </li>
+              <li>
+                <img
+                  src="src/img/wind.png"
+                  alt="cloud-icon"
+                  class="forcast-symbol"
+                />
+              </li>
+              <li>
+                <img
+                  src="src/img/fog.png"
+                  alt="cloud-icon"
+                  class="forcast-symbol"
+                />
+              </li>
+              <li>
+                <img
+                  src="src/img/cloud.png"
+                  alt="cloud-icon"
+                  class="forcast-symbol"
+                />
+              </li>
+              <li>
+                <img
+                  src="src/img/sun.png"
+                  alt="cloud-icon"
+                  class="forcast-symbol"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="col-5">
+            <ul>
+              <li class="temperature">
+                1°C
+              </li>
+              <li class="temperature">-1°C</li>
+              <li class="temperature">0°C</li>
+              <li class="temperature">11°C</li>
+              <li class="temperature">5°C</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="forcast-day">Thursday</li>
+              <li class="forcast-day">Friday</li>
+              <li class="forcast-day">Saturday</li>
+              <li class="forcast-day">Sunday</li>
+              <li class="forcast-day">Monday</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <p class="open-source">
+        <a
+          href="https://github.com/krisztaramn/Weather-app/commits/master"
+          target=" "
+          class="git-link"
+          >Open-source cod</a
+        >
+        by Krisztina Ramn
+      </p>
+    </div>
     <script src="src/app.js"></script>
   </body>
 </html>
