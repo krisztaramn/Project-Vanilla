@@ -48,7 +48,7 @@ ul {
   border: 1px solid #5b8c85;
   padding: 11px;
   position: relative;
-  left: 27px;
+  right: 0;
 }
 .btn.btn-primary:hover {
   cursor: pointer;
