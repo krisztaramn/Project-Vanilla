@@ -8,7 +8,11 @@ section {
   margin-bottom: 0;
   border-radius: 10px;
   width: 500px;
-  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-image: linear-gradient(
+    to top,
+    #6b88a5 0%,
+    rgb(175, 182, 212) 100%
+  );
 }
 h1 {
   font-family: Arial, Helvetica, sans-serif;
@@ -87,6 +91,7 @@ ul {
   border-radius: 5px 0 0 5px;
   color: #678a74;
   background-color: white;
+  margin-right: 0;
 }
 .current-day {
   background-color: white;
@@ -94,6 +99,8 @@ ul {
   margin-top: 20px;
   padding: 10px 45px 10px 5px;
   font-size: 25px;
+  margin-right: 0;
+  padding-right: 60px;
 }
 .current-day:hover {
   background-color: #5b8c85;
@@ -116,8 +123,8 @@ ul {
 }
 .temperature {
   font-size: 15px;
-  color: grey;
-  margin-bottom: 27px;
+  color: whitesmoke;
+  margin-bottom: 32px;
   padding: 12px;
   padding-right: 100px;
   font-family: "Fjalla One", sans-serif;
