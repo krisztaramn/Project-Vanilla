@@ -8,7 +8,8 @@ section {
   margin-bottom: 0;
   border-radius: 10px;
   width: 500px;
-  background-image: url(https://images.pexels.com/photos/3888585/pexels-photo-3888585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-image: url(https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: 700px;
 }
 h1 {
   font-family: Arial, Helvetica, sans-serif;
@@ -46,6 +47,8 @@ ul {
   border-radius: 5px 0 0 5px;
   border: 1px solid #5b8c85;
   padding: 11px;
+  position: relative;
+  left: 27px;
 }
 .btn.btn-primary:hover {
   cursor: pointer;
