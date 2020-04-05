@@ -8,18 +8,14 @@ section {
   margin-bottom: 0;
   border-radius: 10px;
   width: 500px;
-  background-image: linear-gradient(
-    to top,
-    #6b88a5 0%,
-    rgb(175, 182, 212) 100%
-  );
+  background-image: url(https://images.pexels.com/photos/3888585/pexels-photo-3888585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 }
 h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   margin-top: 0;
-  color: #678a74;
-  margin-left: 2px;
+  color: #b0e4dc;
+  margin-left: 9px;
   text-transform: capitalize;
 }
 ul {
@@ -33,6 +29,11 @@ ul {
   border-left: 0 solid #5b8c85;
   padding: 10px 111px 10px 10px;
   border-radius: 0px 5px 5px 0;
+}
+.search-bar:focus {
+  border-color: #6ce0e0;
+  box-shadow: 0px 2px 2px 0 rgba(31, 136, 131, 0.075) inset,
+    0 3px 8px 0 rgba(41, 58, 58, 0.5);
 }
 
 .btn-primary {
@@ -59,7 +60,7 @@ ul {
 }
 .temperature-today {
   margin-top: 25px;
-  color: grey;
+  color: whitesmoke;
   font-family: "Fjalla One", sans-serif;
 }
 .current-temperature {
@@ -113,7 +114,6 @@ ul {
 #description {
   text-transform: capitalize;
 }
-
 .forcast-symbol {
   width: 60px;
   display: block;
@@ -131,11 +131,12 @@ ul {
 }
 .open-source {
   margin-top: 2px;
-  margin-left: 270px;
+  margin-left: 50px;
   font-family: "Lato", sans-serif;
   font-size: 12px;
   font-weight: 500px;
   color: #394b40;
+  margin-right: 150px;
 }
 .git-link {
   text-decoration: none;
