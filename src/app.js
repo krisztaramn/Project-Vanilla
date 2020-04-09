@@ -12,18 +12,19 @@ function formatDate() {
 }
 function showDay() {
   let now = new Date();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
   let day = days[now.getDay()];
   return day;
 }
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
 function displayWeather(response) {
   let currentTemperature = document.querySelector(".current-temperature");
   let h1 = document.querySelector("h1");
@@ -53,6 +54,7 @@ function search(city) {
 
   let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(forecastUrl).then(displayForecast);
+  axios.get(forecastUrl).then(showDayNames);
 }
 
 function showCity(event) {
@@ -107,6 +109,7 @@ function displayForecast(response) {
   fourthDay.innerHTML = Math.round(response.data.list[23].main.temp);
   fifthDay.innerHTML = Math.round(response.data.list[31].main.temp);
   sixthDay.innerHTML = Math.round(response.data.list[39].main.temp);
+
   secondIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.list[7].weather[0].icon}@2x.png`
@@ -119,9 +122,9 @@ function displayForecast(response) {
   thirdIcon.setAttribute("alt", response.data.list[15].weather[0].description);
   fourthIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.list[23].weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.list[24].weather[0].icon}@2x.png`
   );
-  fourthIcon.setAttribute("alt", response.data.list[23].weather[0].description);
+  fourthIcon.setAttribute("alt", response.data.list[24].weather[0].description);
   fifthIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.list[31].weather[0].icon}@2x.png`
@@ -134,6 +137,33 @@ function displayForecast(response) {
   sixthIcon.setAttribute("alt", response.data.list[39].weather[0].description);
 }
 
+function showDayNames(response) {
+  let dayOne = document.querySelector("#monday");
+  let dayTwo = document.querySelector("#tuesday");
+  let dayThree = document.querySelector("#wednesday");
+  let dayFour = document.querySelector("#thursday");
+  let dayfive = document.querySelector("#friday");
+  d = new Date(response.data.list[2].dt_txt);
+  console.log(d.getHours());
+  console.log(d.getMinutes());
+  console.log(
+    new Date(response.data.list[3].dt_txt).getHours() +
+      ":0" +
+      new Date(response.data.list[3].dt_txt).getMinutes()
+  );
+
+  dayOne.innerHTML =
+    days[new Date(response.data.list[7].dt * 1000).getDay()] +
+    " at " +
+    new Date(response.data.list[3].dt_txt).getHours() +
+    ":0" +
+    new Date(response.data.list[3].dt_txt).getMinutes();
+  dayTwo.innerHTML = days[new Date(response.data.list[15].dt * 1000).getDay()];
+  dayThree.innerHTML =
+    days[new Date(response.data.list[23].dt * 1000).getDay()];
+  dayFour.innerHTML = days[new Date(response.data.list[24].dt * 1000).getDay()];
+  dayfive.innerHTML = days[new Date(response.data.list[39].dt * 1000).getDay()];
+}
 let celsiusValue = null;
 
 let form = document.querySelector("form");
