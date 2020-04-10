@@ -122,9 +122,9 @@ function displayForecast(response) {
   thirdIcon.setAttribute("alt", response.data.list[15].weather[0].description);
   fourthIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.list[24].weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.list[23].weather[0].icon}@2x.png`
   );
-  fourthIcon.setAttribute("alt", response.data.list[24].weather[0].description);
+  fourthIcon.setAttribute("alt", response.data.list[23].weather[0].description);
   fifthIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.list[31].weather[0].icon}@2x.png`
@@ -138,6 +138,8 @@ function displayForecast(response) {
 }
 
 function showDayNames(response) {
+  let source = response.data;
+
   let dayOne = document.querySelector("#monday");
   let dayTwo = document.querySelector("#tuesday");
   let dayThree = document.querySelector("#wednesday");
@@ -147,22 +149,36 @@ function showDayNames(response) {
   console.log(d.getHours());
   console.log(d.getMinutes());
   console.log(
-    new Date(response.data.list[3].dt_txt).getHours() +
+    new Date(source.list[3].dt_txt).getHours() +
       ":0" +
       new Date(response.data.list[3].dt_txt).getMinutes()
   );
 
   dayOne.innerHTML =
-    days[new Date(response.data.list[7].dt * 1000).getDay()] +
+    days[new Date(source.list[7].dt * 1000).getDay()].fontsize(4) +
     " at " +
-    new Date(response.data.list[3].dt_txt).getHours() +
-    ":0" +
-    new Date(response.data.list[3].dt_txt).getMinutes();
-  dayTwo.innerHTML = days[new Date(response.data.list[15].dt * 1000).getDay()];
+    new Date(source.list[7].dt_txt).getHours() +
+    ":00";
+  dayTwo.innerHTML =
+    days[new Date(source.list[15].dt * 1000).getDay()].fontsize(4) +
+    " at " +
+    new Date(source.list[15].dt_txt).getHours() +
+    ":00";
   dayThree.innerHTML =
-    days[new Date(response.data.list[23].dt * 1000).getDay()];
-  dayFour.innerHTML = days[new Date(response.data.list[24].dt * 1000).getDay()];
-  dayfive.innerHTML = days[new Date(response.data.list[39].dt * 1000).getDay()];
+    days[new Date(source.list[23].dt * 1000).getDay()].fontsize(4) +
+    " at " +
+    new Date(source.list[23].dt_txt).getHours() +
+    ":00";
+  dayFour.innerHTML =
+    days[new Date(source.list[31].dt * 1000).getDay()].fontsize(4) +
+    " at " +
+    new Date(source.list[31].dt_txt).getHours() +
+    ":00";
+  dayfive.innerHTML =
+    days[new Date(source.list[39].dt * 1000).getDay()].fontsize(4) +
+    " at " +
+    new Date(source.list[39].dt_txt).getHours() +
+    ":00";
 }
 let celsiusValue = null;
 

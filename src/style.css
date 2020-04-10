@@ -49,6 +49,7 @@ ul {
   padding: 11px;
 }
 .btn.btn-primary:hover {
+  cursor: pointer;
   background-color: #434e52;
   border: 1px solid #434e52;
 }
@@ -85,23 +86,29 @@ ul {
   text-align: left;
   border: 2px solid #5b8c85;
   border-right: 1px;
-  margin-bottom: 35px;
-  font-weight: 500px;
+  margin-bottom: 37px;
+  font-weight: 300px;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 5px 75px 5px 5px;
+  padding: 5px 0 5px 5px;
   border-radius: 5px 0 0 5px;
   color: #678a74;
   background-color: white;
   margin-right: 0;
+  font-size: 11px;
 }
 .current-day {
   background-color: white;
   margin-bottom: 0;
   margin-top: 20px;
-  padding: 10px 45px 10px 5px;
+  padding: 10px 110px 10px 5px;
   font-size: 25px;
   margin-right: 0;
-  padding-right: 60px;
+  border: 2px solid #5b8c85;
+  border-right: 1px;
+  font-weight: 500px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px 0 0 5px;
+  color: #678a74;
 }
 .current-day:hover {
   background-color: #5b8c85;
