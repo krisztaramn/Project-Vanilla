@@ -145,14 +145,6 @@ function showDayNames(response) {
   let dayThree = document.querySelector("#wednesday");
   let dayFour = document.querySelector("#thursday");
   let dayfive = document.querySelector("#friday");
-  d = new Date(response.data.list[2].dt_txt);
-  console.log(d.getHours());
-  console.log(d.getMinutes());
-  console.log(
-    new Date(source.list[3].dt_txt).getHours() +
-      ":0" +
-      new Date(response.data.list[3].dt_txt).getMinutes()
-  );
 
   dayOne.innerHTML =
     days[new Date(source.list[7].dt * 1000).getDay()].fontsize(4) +
